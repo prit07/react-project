@@ -1,0 +1,51 @@
+<!-- The HTML id attribute is used to specify a unique id for an HTML element.
+     You cannot have more than one element with the same id in an HTML document.
+
+     The id attribute is used to point to a specific style declaration in a style sheet.
+     It is also used by JavaScript to access and manipulate the element with the specific id.
+
+     In the following example we have an <h1> element that points to the id name "myHeader".
+     This <h1> element will be styled according to the #myHeader style definition in the head section:
+
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>page title </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body h1
+        {
+            text-align: center;
+            background-color: aqua;
+        }
+        
+        body h2
+        {
+            text-align: center;
+            text-shadow:2px 2px 2px black;
+            color: goldenrod;
+        }
+        body p
+        {
+            font-size: large;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h2>The id Attribute</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi autem facere velit laboriosam quisquam ea
+        dolorum dolorem mollitia quibusdam, quaerat esse est, incidunt doloremque voluptate repudiandae. Asperiores
+        porro expedita fugit.</p>
+
+    <h1 id="myheader">my header</h1>
+
+</body>
+
+</html>
