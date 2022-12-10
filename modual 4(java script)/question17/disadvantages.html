@@ -1,0 +1,51 @@
+<!-- 
+    The innerHTML property is a part of the Document Object Model (DOM) that is used to
+    set or return the HTML content of an element. Where the return value represents
+    the text content of the HTML element. It allows JavaScript code to manipulate a website
+    being displayed. More specifically, it sets or returns the HTML content (the inner HTML)
+    of an element. The innerHTML property is widely used to modify the contents of a webpage
+    as it is the easiest way of modifying DOM. But there are some disadvantages to using 
+    innerHTML in JavaScript.
+ -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Using innerHTML in JavaScript
+    </title>
+</head>
+
+<body style="text-align: center">
+
+    <h1 style="color:green">
+        GeeksforGeeks
+    </h1>
+
+    <p id="P">
+        A computer science
+        portal for geeks.
+    </p>
+
+    <button onclick="geek()">
+        Try it
+    </button>
+
+    <p id="p"></p>
+
+    <script>
+        function geek() {
+            var x = document.getElementById("P")
+                .innerHTML;
+
+            document.getElementById("p")
+                .innerHTML = x;
+
+            document.getElementById("p")
+                .style.color = "green";
+        }
+    </script>
+</body>
+
+</html>
