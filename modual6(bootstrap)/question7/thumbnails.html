@@ -1,0 +1,52 @@
+<!-- 
+    how can you use bootstrap to make thumbnails?
+    
+     This chapter discusses about Bootstrap thumbnails. A lot of sites need a way to lay out images, videos, text, etc, in a grid, and Bootstrap has an easy way to do this with thumbnails. To create thumbnails using Bootstrap −
+
+     Add an <a> tag with the class of .thumbnail around an image.
+     This adds four pixels of padding and a gray border.
+     On hover, an animated glow outlines the image.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title class="text-c">Thumbnail images</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js">
+    </script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+    </script>
+</head>
+
+<body>
+    <h3 class="text-center" style="color: green">Bootstrap thumbnails</h3><br><br>
+    <div class="row">
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="https://www.geeksforgeeks.org/wp-content/uploads/Java-768x256.png"
+                    style="height: 100px; width: 100px" />
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/machineLearning3.png"
+                    style="height: 100px; width: 100px" />
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210202223017/Competitive-Programming-%E2%80%93-A-Complete-Guide.png"
+                    style="height: 100px; width: 100px" />
+            </a>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <a href="#" class="thumbnail">
+                <img src="https://www.geeksforgeeks.org/wp-content/uploads/Java-768x256.png"
+                    style="height: 100px; width: 100px" />
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>
