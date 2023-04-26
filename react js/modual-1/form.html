@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+         body 
+        {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            width: 100%;
+            height: 568px;
+            background-color:  #385b9c;
+        }
+
+        .main 
+        {
+            width: 100%;
+            height: auto;
+        }
+        .main h2
+        {
+            width: 60%;
+            height: auto;
+            margin: auto;
+            margin-top: 12%;
+            position: absolute;
+            margin-left: 5%;
+            font-size: 50px;
+            letter-spacing: 2px;
+            color: white;
+        }
+        .main p
+        {
+            width: 40%;
+            height: auto;
+            margin: auto;
+            margin-top: 18%;
+            position: absolute;
+            margin-left: 5%;
+            font-size: 13px;
+            letter-spacing: 2px;
+            color: white;
+        }
+        .login 
+        {
+            width: 25%;
+            height: 300px;
+            /* background-color: #385b9c; */
+            background-color: rgba(0,0,200,0.7);
+            float:center;
+            margin-top: 15%;
+            margin-left: 33%;
+            border-radius: 5%;
+            box-shadow: 5px 0px 5px 5px white;
+            z-index: -5 !important;
+        }
+        .login h1 
+
+        {
+            font-size: 40px;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            animation: heartBeat 1s infinite !important;
+        }
+        input[type="text"],input[type="password"]
+        {
+            width: 200px;
+            height: auto;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button[type="button"]
+        {
+            width: 220px;
+            height: auto;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #10153d;
+            color: white;
+            margin-top: 8%;
+            
+        } 
+    </style>
+    <script>
+        function login()
+        {
+            var unm=document.getElementById("unm").value;
+            var pwd=document.getElementById("pass").value;
+            if(unm=='preet007' && pwd=='preet01')
+            {
+                alert('You are successfully Logged In')
+                window.location='https://www.flipkart.com';
+
+            }
+
+            else 
+            {
+                alert('Your username and password are wrong try again')
+                window.location='login-samples.html';
+            }
+        }
+    </script>
+</head>
+<body>
+     <div class="login">
+            <h1 align="center">Login</h1>
+            <form method="post">
+                <table align="center">
+                    <tr>
+                        <td><input type="text" name="uname" id="unm" placeholder="Username *" required></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" name="pass" id="pass" placeholder="Password *" required></td>
+                    </tr>
+
+
+                    <tr>
+                        <td><button  type="button"  name="log" onclick="login()"><b class="btn">Login</b></button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+</body>
+</html>
