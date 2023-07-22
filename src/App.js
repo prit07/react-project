@@ -1,61 +1,49 @@
-import React, { useEffect } from 'react'
-import './index.css';
-import Home from "./Home"
-import Contact from './components/client/Pages/Contact';
-import Service from './components/client/Pages/Service';
-import Project from './components/client/Pages/Project';
-import Features from './components/client/Pages/Features';
-import ErrorPage from './components/client/Pages/ErrorPage';
-import "aos/dist/aos.css"
-import AOS from 'aos';
-import {BrowserRouter,Routes , Route } from 'react-router-dom';
-import About from "./components/client/Pages/About"
-import NavbarApp from './components/client/NavbarApp';
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import Our from './components/client/Pages/Our Team';
+import React, { useState } from 'react';
 
+const Checklist = () => {
+  // Initialize state to keep track of checked options
+  const [checkedItems, setCheckedItems] = useState({});
 
-import AdminLogin from "./components/admin/AdminLogin"
-import { AdminLayout } from './AdminLayout';
+  // Dummy data for checklist options
+  const options = [
+    { id: 1, label: 'Option 1' },
+    { id: 2, label: 'Option 2' },
+    { id: 3, label: 'Option 3' },
+    { id: 4, label: 'Option 4' },
+  ];
 
+  // Function to handle checkbox changes
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setCheckedItems((prevCheckedItems) => ({ ...prevCheckedItems, [name]: checked }));
+  };
 
-
-const App = () => {
-
-
-  
-  useEffect(() => {
-    AOS.init();
-  }, []
-  ) 
   return (
-      <>
-       
-       <BrowserRouter>
-       <Routes>
-        <Route path="/" element={<NavbarApp/>}>
-          <Route index element={<Home/>}/>
-          <Route path='/home' element={<Home/>}/>
-          <Route path="/about" element={<About/>}/>
-          <Route path="/contant" element={<Contact/>}/>
-          <Route path="/service" element={<Service/>}/>
-          <Route path="/Project" element={<Project/>}/>
-          <Route path="/Features" element={<Features/>}/>
-          <Route path="/Our" element={<Our/>}/>
-          <Route path="/Contact" element={<Contact/>}/>
-          <Route path="*" element={<ErrorPage/>}/>
-          </Route>  
+    <div>
+      <h2>Checklist</h2>
+      <form>
+        {options.map((option) => (
+          <div key={option.id}>
+            <label>
+              <input
+                type="checkbox"
+                name={option.label}
+                checked={checkedItems[option.label] || false}
+                onChange={handleCheckboxChange}
+              />
+              {option.label}
+            </label>
+          </div>
+        ))}
+      </form>
+      <h3>Selected Options:</h3>
+      <ul>
+        {Object.entries(checkedItems).map(([label, checked]) => (
+          checked && <li key={label}>{label}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-          {/* admin login here */}
-          <Route path="/admin-login" element={<AdminLogin />}></Route>
-          <Route path="/admin-login/admin-dashboard" element={<AdminLayout />}></Route>
-         
-       
-       </Routes>
-       </BrowserRouter>
- 
-       </>
-  )
-}
-export default App;
+export default Checklist;
