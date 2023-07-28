@@ -1,0 +1,18 @@
+<!-- 
+
+    • What is Redux Thunk used for?
+
+
+        Redux Thunk is a middleware for Redux, a popular JavaScript library for managing application state. It is used to handle asynchronous actions in Redux.
+
+        In Redux, actions are typically plain JavaScript objects that describe a state change. They are dispatched to the Redux store, which then updates the application state accordingly. However, these actions are synchronous by default, meaning they are executed immediately when dispatched.
+
+        Redux Thunk allows action creators to return functions instead of plain objects. These functions can contain asynchronous logic, such as API calls or other asynchronous operations. When an action creator returns a function, Redux Thunk intercepts it before it reaches the Redux store.
+
+        The intercepted function is then executed, receiving the dispatch and getState functions as arguments. This enables the function to dispatch other actions, including both synchronous and asynchronous ones, and access the current state of the application.
+
+        By using Redux Thunk, developers can write action creators that can perform asynchronous operations and dispatch actions based on the results. This helps in managing complex asynchronous workflows and side effects within Redux, while still maintaining the centralization and predictability of state management.
+
+        Overall, Redux Thunk is used to introduce asynchronous behavior into Redux applications, allowing for the handling of asynchronous actions and side effects in a controlled manner. It provides a way to manage complex logic involving asynchronous operations while adhering to the Redux principles of state management.
+
+ -->

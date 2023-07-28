@@ -1,0 +1,19 @@
+<!-- 
+
+     • What is Pure Component? When to use Pure Component over Component?
+
+
+     In React, both Component and PureComponent are base classes that you can extend to create your own components. The difference between them lies in how they handle component updates.
+
+     A Component in React implements the shouldComponentUpdate() lifecycle method, which is responsible for determining if the component should re-render when its props or state change. By default, shouldComponentUpdate() returns true, indicating that the component should re-render whenever its props or state change. This means that even if there are no actual changes in the props or state, the component will still re-render by default.
+
+     On the other hand, a PureComponent is a subclass of Component that automatically implements a shallow comparison of the component's props and state in the shouldComponentUpdate() method. This means that a PureComponent will only re-render if there are actual changes detected in the shallow comparison. If the props and state are determined to be the same as the previous render, shouldComponentUpdate() will return false, preventing unnecessary re-renders.
+
+     The key advantage of using PureComponent over Component is performance optimization. By default, PureComponent reduces the number of re-renders by avoiding unnecessary updates when the component's props and state haven't changed. This can be particularly useful in scenarios where components have expensive rendering operations or are part of a large component tree.
+
+     However, it's important to note that the shallow comparison used by PureComponent is based on the properties and state being immutable or only changing by reference. If a component's props or state contain complex data structures that may be updated without changing the reference (e.g., mutable arrays or objects), the shallow comparison may not detect the changes, leading to incorrect behavior. In such cases, using Component with a custom shouldComponentUpdate() implementation may be more appropriate.
+
+     In summary, use PureComponent when you want to optimize performance by avoiding unnecessary re-renders, especially for components with immutable props and state. Use Component when you need more control over the update logic, such as when dealing with complex data structures or requiring custom comparisons in the shouldComponentUpdate() method.
+
+
+ -->
